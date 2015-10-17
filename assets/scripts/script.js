@@ -1,4 +1,12 @@
-
+// function showMetrics(){
+// 	window.setTimeout(function(){
+// 		$('#fun-title').animate({
+// 			'top' : '0',
+// 			'text-align': 'left',
+// 			'opacity':'0.5'
+// 		}, 400);
+// 	}, 1000)
+// }
 
 function transform(){
 	$('body').css('overflow','hidden');
@@ -19,15 +27,16 @@ function transform(){
 			$('.version-gap').animate({
 				'height': 2*$(window).height()+'px'
 			}, 2000, function(){
-				$('.paper-container').fadeOut();
-				$('.fun-version').fadeIn();
+				$('.paper-container').fadeOut('slow');
+				$('.fun-version').fadeIn('slow', function(){
+					// showMetrics();
+				});
 				// $('body').css('overflow','auto');
 
 			});
 		}
 	},'linear' );
 }
-
 
 (function(){
 	$('#transform-btn').click(function(){
