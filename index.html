@@ -56,66 +56,90 @@
 		<!-- My style :3 -->
 		<link rel="stylesheet" href="assets/css/style.css">
 	</head>
-	<body>
-		<div class="paper-container">
-			<div class="header">
-				<div class="title-block">
-					<div class="header-image">
-						<img id="transform-btn" class="transform-rotate-img" src="assets/images/profile.jpg"></div>
-					<div class="header-image-top"><img src="assets/images/profile.jpg"></div>
-					<div class="version-gap"></div>
-					<div class="header-image-bottom"><img src="assets/images/profile.jpg"></div>
-					<div class="title">Julian Shi</div>
-					Master of Mechanical Engineer<br>McGill University
-				</div>
-			</div>
-			<div class="content-container">
-				<div class="section">
-					<div class="section-title">Abstract</div>
-					<em>I am a master student at McGill University, passionated in aerospace, robotics and cooking.</em>
-				</div>
-				<div class="content">
-					<div class="section">
-						<div class="section-title">1. Introduction</div>
-						<p> mechanical engineer or software engineer jobs.</p>
-					</div>
-
-					<div class="section">
-						<div class="section-title">2. Previous Works</div>
-						<p>Upon graduating from my master's program in mechanical engineering in McGill University in May 2016, I'm looking for mechanical engineer or software engineer jobs.</p>
-					</div>
-
-					<div class="section">
-						<div class="section-title">3. Contact Problem</div>
-						<p>Upon graduating from my master's program in mechanical engineering in McGill University in May 2016, I'm looking for mechanical engineer or software engineer jobs.</p>
-					</div>
-
-					<div class="section">
-						<div class="section-title">4. Result</div>
-						<p>Upon graduating from my master's program in mechanical engineering in McGill University in May 2016, I'm looking for mechanical engineer or software engineer jobs.</p>
-					</div>
-
-					<div class="section">
-						<div class="section-title">5. Future Work</div>
-						<p>Upon graduating from my master's program in mechanical engineering in McGill University in May 2016, I'm looking for mechanical engineer or software engineer jobs.</p>
-					</div>
-
-					<div class="section">
-						<div class="section-title">6. Reference</div>
-						<p>Upon graduating from my master's program in mechanical engineering in McGill University in May 2016, I'm looking for mechanical engineer or software engineer jobs.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="fun-version">
-			<div class="full-size-header">
+	<body class="min-full-height">
+		<div class="fun-version min-full-height" ng-controller="viewCtrl">
+			<div class="full-bg"></div>
+			<!-- <div class="full-size-header">
 				<div id="fun-title" class="title-block">
 					<div class="title">Julian Shi</div>
 					Master of Mechanical Engineer @ McGill University
 				</div>
-			</div>
+			</div> -->
+			<table class="admin-style min-full-height">
+				<tr><td class="bg-black">
+					<div class="side-menu">
+						<div>
+							<img class="s-img-left" src="assets/images/profile.jpg">
+							<div class="menu-title">Julian Shi</div>
+							Master of Mechanical Engineer<br>
+							McGill University
+						</div>
+						<div class="menu-btn">Profile</div>
+						<div class="menu-btn">Experience</div>
+						<div class="menu-btn">Education</div>
+						<div class="menu-btn">Projects</div>
+						<div class="menu-btn">Contact</div>
+					</div>
+				</td>
+				<td class="content-body">
+					<div class="row">
+						<div class="col-md-7">
+							<div class="bg-white panel">
+								Current position
+								<h3><strong>{{currentPos.title}}</strong></h3>
+								@ {{currentPos.company}} - {{currentPos.location}}<br>
+								Since {{currentPos.start}}
+								<hr>
+								Learning: <span ng-repeat="l in currentPos.skills">
+									<span class="label label-info">{{l}}</span>
+								</span>
+							</div>
+							<div class="bg-white panel">
+								<h3><i class="fa fa-suitcase"></i> Experiences</h3>
+								<div ng-repeat="e in experiences">
+									<div class="row">
+										<div class="col-md-6">
+											<strong>{{e.title}}</strong>
+											<br>@ {{currentPos.company}} - {{e.location}}
+										</div>
+										<div class="col-md-6 text-right">
+											{{e.start}} - {{e.end}}
+										</div>
+									</div>
+									<ul>
+										<li ng-repeat="d in e.pointDescriptions">
+											{{d}}
+										</li>
+									</ul>
+									<hr>
+									<span ng-repeat="l in e.skills">
+										<span class="label label-primary">{{l}}</span>
+									</span>
+									<br>
+									<br>
+									<br>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="bg-white panel">
+								<h3><i class="fa fa-file-text"></i> Summary</h3>
+								<p>Upon graduating from my master's program in mechanical engineering in McGill University in May 2016, I'm looking for mechanical engineer or software engineer jobs.</p>
+								<p>I had two years of research and project experiences in aircraft engine systems modelling and controllers design in Beijing. I'm now in research of nonlinear system e.g. contact problems. </p>
+								<p>My dream is to bring machine with intelligence, and bring human with high-tech, so I also took ML and AI courses. I'm also in McGill Robotics Club to chase my dream now.</p>
+								<p>I grew up in south China, where there are many beautiful trees and creatures. It's less developed yet people there are very friendly and hardworking. I wish to contribute to my hometown.</p>
+							</div>
+							<div class="bg-black panel">
+								<h3><i class="fa fa-cogs"></i> Skills</h3>
+								<iframe id="skill-cloud" src="./skills.html" scrolling="no" frameborder="0"
+								height="200px"></iframe>
+							</div>
+						</div>
+					</div>
+				</td></tr>
+			</table>
 		</div>
 	</body>
 	<script type="text/javascript" src="assets/scripts/script.js"></script>
+	<script type="text/javascript" src="assets/scripts/data.js"></script>
 </html>

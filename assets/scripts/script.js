@@ -39,7 +39,9 @@ function transform(){
 }
 
 (function(){
-	$('#transform-btn').click(function(){
-		transform();
-	});
+	// $('#transform-btn').click(function(){
+	// 	transform();
+	// });
+
+	$('.fun-version').fadeIn();
 }());

@@ -13,6 +13,10 @@ img#transform-btn:hover{
 	filter: alpha(opacity=50);
 }
 
+.min-full-height{
+	min-height:100%;
+}
+
 /* Acadamic paper version */
 
 .paper-container{
@@ -108,22 +112,126 @@ img#transform-btn:hover{
 	display:none;
 }
 
-.full-size-header{
+.full-bg{
+	position:fixed;
+	top:0;
+	left:0;
+	z-index: 2;
 	background-image: url("../images/3.jpg");
-	width:100%;
-	height:100%;
-	text-align: center;
 	background-size: cover;
 	background-position: center;
+	width:100%;
+	height:100%;
+
+}
+
+.full-size-header{
+	text-align: center;
 	/*-webkit-filter: blur(2px);*/
 }
 
 .fun-version .title-block{
 	position:absolute;
+	z-index: 3;
 	top:40%;
 	left:0;
 	width:100%;
+	height:auto;
 	text-align: center;
 	font-family: 'Black Ops One', cursive;
 	/*-webkit-filter: blur(0);*/
+}
+
+.admin-style{
+	position:absolute;
+	z-index: 4;
+	top:0;
+	left:0;
+	width:100%;
+}
+
+.row{
+	margin:0;
+}
+
+.admin-style .bg-black{
+	background-color:rgba(0,0,0,0.5);
+	color:white;
+}
+
+.admin-style .bg-white{
+	background-color:rgba(255,255,255,0.8);
+	color:black;
+}
+
+.admin-style .bg-white hr {
+	background-color: gray;
+	height: 1px;
+	border: 0;
+}
+
+.admin-style hr{
+	margin:8px 0 10px 0;
+}
+
+.admin-style .side-menu{
+	padding:10px;
+	width:500px;
+	display:block;
+	float:left;
+}
+
+
+.admin-style .menu-btn{
+	padding:10px;
+	cursor:pointer;
+}
+
+.admin-style .menu-title{
+	font-family: 'Black Ops One', cursive;
+	font-size:50px;
+	line-height: 40px;
+	padding-top:20px;
+}
+
+.s-img-left{
+	width:120px;
+	float:left;
+	padding-right:10px;
+	padding-bottom:10px;
+}
+
+
+.admin-style .menu-btn:hover{
+	background-color:rgba(255,255,255,0.2);
+}
+
+.admin-style .content-body{
+	display: table-cell;
+	padding: 50px;
+}
+
+.admin-style h2{
+	font-family: 'Black Ops One', cursive;
+	font-size: 30px;
+}
+
+.admin-style h3{
+	font-family: 'Julius Sans One', sans-serif;
+	font-size:25px;
+}
+
+.admin-style h3 .fa{
+	font-size:20px;
+	padding-left: 10px;
+}
+
+.admin-style .panel{
+	padding:10px;
+	margin-bottom:20px;
+}
+
+#skill-cloud{
+	overflow:hidden;
+	width:100%;
 }
