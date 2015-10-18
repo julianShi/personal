@@ -235,3 +235,25 @@ img#transform-btn:hover{
 	overflow:hidden;
 	width:100%;
 }
+
+.inline{
+	display:inline-block;
+}
+
+.text-top{
+	vertical-align: top;
+}
+
+.admin-style .contact-links a,
+.admin-style .contact-links a:focus,
+.admin-style .contact-links a:active{
+	color:white;
+	font-size:40px;
+	text-transform: none;
+	text-decoration: none;
+	padding-right:10px;
+}
+
+.admin-style .contact-links a:hover{
+	color:#66aaff;
+}

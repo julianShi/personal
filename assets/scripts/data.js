@@ -11,7 +11,8 @@ var experiences = [
 				"Built a autonomous rover with an Arduino board and a sonar sensor.",
 				"Implemented SLAM algorithm to map and navigate autonomously."
 			],
-		skills: ["ROS", "C++"]
+		skills: ["ROS", "C++"],
+		url: ""
 	},{
 		title: "Mechanical Engineer",
 		company: "Chinese Academy of Sciences",
@@ -22,10 +23,54 @@ var experiences = [
 				"In a combustion lab, designed the embedded system prototype of temperature control using SCM-51 development kit. Wrote sensors drivers using assembly language.",
 				"Built mathematical models of an industrial recuperative gas turbine generator using the Gas Turbine Simulation Program (GSP) and Matlab/Simulink. Wrote its starting manoeuvre handbook."
 			],
-		skills: ["Simulink", "Matlab", "GSP"]
+		skills: ["Simulink", "Matlab", "GSP"],
+		url: ""
 	}
 ];
 
+var education = [
+	{
+		degree: "Master's degree (Thesis), Mechanical Engineering",
+		school: "McGill University",
+		start: "Fall 2014",
+		end: "Summer 2016 (expected)",
+		location: "Montreal, QC, Canada",
+		pointDescriptions: [
+			"Design finite element and modal analysis algorithms for structural dynamics and vibration computing."
+			],
+		courses:[
+			"Applied Mathematics",
+			"Control Systems",
+			"Finite Element",
+			"Advanced Dynamics",
+			"Machine Learning",
+			"Artificial Intelligence",
+			],
+		url: ""
+	},{
+		degree: "Bachelor of Science (BS), Aerospace, Aeronautical and Astronautical Engineering",
+		school: "Beihang University",
+		start: "2009",
+		end: "2013",
+		location: "Beijing, China",
+		pointDescriptions: [
+			],
+		courses:[
+			"Mathematics,",
+			"Fluid Mechanics",
+			"Thermodynamics",
+			"C Programming",
+			"Electrics and Electronics",
+			"Manufacturing Practise",
+			"Automatic Control",
+			],
+		url: ""
+	},
+];
+
+var projects = [
+
+];
 
 
 // if you have a current job
@@ -35,8 +80,9 @@ var current = experiences[0];
 
 
 function viewCtrl($scope) {
-	$scope.experiences = experiences;
 	$scope.currentPos = current;
+	$scope.experiences = experiences;
+	$scope.education = education;
 
 	$scope.refresh = function() {
 		window.setTimeout(function(){

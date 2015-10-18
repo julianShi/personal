@@ -66,7 +66,7 @@
 				</div>
 			</div> -->
 			<table class="admin-style min-full-height">
-				<tr><td class="bg-black">
+				<tr><td class="bg-black text-top">
 					<div class="side-menu">
 						<div>
 							<img class="s-img-left" src="assets/images/profile.jpg">
@@ -87,12 +87,51 @@
 							<div class="bg-white panel">
 								Current position
 								<h3><strong>{{currentPos.title}}</strong></h3>
-								@ {{currentPos.company}} - {{currentPos.location}}<br>
-								Since {{currentPos.start}}
+								<div class="row">
+									<div class="col-md-8">
+										@ {{currentPos.company}} - {{currentPos.location}}
+									</div>
+									<div class="col-md-4 text-right">
+										Since {{currentPos.start}}
+									</div>
+								</div>
 								<hr>
 								Learning: <span ng-repeat="l in currentPos.skills">
 									<span class="label label-info">{{l}}</span>
 								</span>
+							</div>
+							<div class="bg-white panel">
+								<h3>Overview</h3>
+								<div class="row">
+									<div class="col-md-6">
+										<table>
+											<tr><td class="text-right text-top">
+												<i class="fa fa-graduation-cap"></i>&nbsp;</td><td>
+												<strong>Education</strong><br>
+												Master of Mechanical Engineering at McGill University<br>
+											</td></tr><tr>
+											<td class="text-right text-top">
+												<i class="fa fa-map-marker"></i>&nbsp;</td><td>
+												<strong>Location</strong><br>
+												Montreal, QC, Canada<br>
+											</td></tr>
+										</table>
+									</div>
+									<div class="col-md-6">
+										<table>
+											<tr><td class="text-right text-top">
+												<i class="fa fa-globe"></i>&nbsp;</td><td>
+												<strong>Language</strong><br>
+												English, Mandarin<br>
+											</td></tr><tr>
+											<td class="text-right text-top">
+												<i class="fa fa-calendar-check-o"></i>&nbsp;</td><td>
+												<strong>Availability</strong><br>
+												Starting from May 2016<br>
+											</td></tr>
+										</table>
+									</div>
+								</div>
 							</div>
 							<div class="bg-white panel">
 								<h3><i class="fa fa-suitcase"></i> Experiences</h3>
@@ -100,7 +139,7 @@
 									<div class="row">
 										<div class="col-md-6">
 											<strong>{{e.title}}</strong>
-											<br>@ {{currentPos.company}} - {{e.location}}
+											<br>@ {{e.company}} - {{e.location}}
 										</div>
 										<div class="col-md-6 text-right">
 											{{e.start}} - {{e.end}}
@@ -120,6 +159,40 @@
 									<br>
 								</div>
 							</div>
+							<div class="bg-white panel">
+								<h3><i class="fa fa-graduation-cap "></i> Education</h3>
+								<div ng-repeat="e in education">
+									<div class="row">
+										<div class="col-md-6">
+											<strong>{{e.school}}</strong>
+										</div>
+										<div class="col-md-6 text-right">
+											{{e.start}} - {{e.end}}
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											{{e.degree}}
+											<br>@ {{e.location}}
+										</div>
+									</div>
+									<ul>
+										<li ng-repeat="d in e.pointDescriptions">
+											{{d}}
+										</li>
+									</ul>
+									<hr>
+									Relevant courses
+									<ul>
+										<li ng-repeat="c in e.courses">
+											{{c}}
+										</li>
+									</ul>
+									<br>
+									<br>
+									<br>
+								</div>
+							</div>
 						</div>
 						<div class="col-md-5">
 							<div class="bg-white panel">
@@ -133,6 +206,12 @@
 								<h3><i class="fa fa-cogs"></i> Skills</h3>
 								<iframe id="skill-cloud" src="./skills.html" scrolling="no" frameborder="0"
 								height="200px"></iframe>
+							</div>
+							<div class="contact-links">
+								<a href="" target="_blank"><i class="fa fa-facebook-official"></i></a>
+								<a href="https://ca.linkedin.com/pub/yulin-shi/5a/a49/53b" target="_blank"><i class="fa fa-linkedin"></i></a>
+								<a href="https://github.com/julianShi" target="_blank"><i class="fa fa-github"></i></a>
+								<a href="mailto:yulin.shi@mail.mcgill.com" title="yulin.shi@mail.mcgill.com"><i class="fa fa-envelope"></i></a>
 							</div>
 						</div>
 					</div>
