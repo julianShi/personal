@@ -1,5 +1,6 @@
-var experiences = [
+var story = [
 	{
+		type: "exp",
 		title: "Software Engineer",
 		company: "McGill Robotics",
 		start: "Sept 2015",
@@ -12,24 +13,10 @@ var experiences = [
 				"Implemented SLAM algorithm to map and navigate autonomously."
 			],
 		skills: ["ROS", "C++"],
-		url: ""
+		icon:"fa-graduation-cap",
+		url: "",
 	},{
-		title: "Mechanical Engineer",
-		company: "Chinese Academy of Sciences",
-		start: "Mar 2013",
-		end: "Aug 2013 ",
-		location: "Beijing, China",
-		pointDescriptions:[
-				"In a combustion lab, designed the embedded system prototype of temperature control using SCM-51 development kit. Wrote sensors drivers using assembly language.",
-				"Built mathematical models of an industrial recuperative gas turbine generator using the Gas Turbine Simulation Program (GSP) and Matlab/Simulink. Wrote its starting manoeuvre handbook."
-			],
-		skills: ["Simulink", "Matlab", "GSP"],
-		url: ""
-	}
-];
-
-var education = [
-	{
+		type: "ed",
 		degree: "Master's degree (Thesis), Mechanical Engineering",
 		school: "McGill University",
 		start: "Fall 2014",
@@ -46,8 +33,24 @@ var education = [
 			"Machine Learning",
 			"Artificial Intelligence",
 			],
+		icon:"fa-graduation-cap",
 		url: ""
 	},{
+		type: "exp",
+		title: "Mechanical Engineer",
+		company: "Chinese Academy of Sciences",
+		start: "Mar 2013",
+		end: "Aug 2013 ",
+		location: "Beijing, China",
+		pointDescriptions:[
+				"In a combustion lab, designed the embedded system prototype of temperature control using SCM-51 development kit. Wrote sensors drivers using assembly language.",
+				"Built mathematical models of an industrial recuperative gas turbine generator using the Gas Turbine Simulation Program (GSP) and Matlab/Simulink. Wrote its starting manoeuvre handbook."
+			],
+		skills: ["Simulink", "Matlab", "GSP"],
+		icon:"fa-suitcase",
+		url: ""
+	},{
+		type: "ed",
 		degree: "Bachelor of Science (BS), Aerospace, Aeronautical and Astronautical Engineering",
 		school: "Beihang University",
 		start: "2009",
@@ -64,6 +67,7 @@ var education = [
 			"Manufacturing Practise",
 			"Automatic Control",
 			],
+		icon:"fa-graduation-cap",
 		url: ""
 	},
 ];
@@ -74,15 +78,14 @@ var projects = [
 
 
 // if you have a current job
-var current = experiences[0];
+var current = story[0];
 // otherwise
 // var current = null
 
 
 function viewCtrl($scope) {
 	$scope.currentPos = current;
-	$scope.experiences = experiences;
-	$scope.education = education;
+	$scope.story = story;
 
 	$scope.refresh = function() {
 		window.setTimeout(function(){

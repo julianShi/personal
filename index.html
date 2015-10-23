@@ -39,6 +39,7 @@
 
 <html data-ng-app lang="en">
 	<head>
+		<meta charset="utf-8">
 		<title>Julian Shi</title>
 		<!-- jQuery -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -51,10 +52,12 @@
 		<link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<!-- Icons -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<!-- My style :3 -->
 		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/timeline.css">
 	</head>
 	<body class="min-full-height">
 		<div class="fun-version min-full-height" ng-controller="viewCtrl">
@@ -133,7 +136,33 @@
 									</div>
 								</div>
 							</div>
-							<div class="bg-white panel">
+
+							<ul class="timeline">
+					            <li ng-repeat="s in story">
+									<i class="fa {{s.icon}} {{s.type == 'exp' ? 'green' : ''}}"></i>
+									<!-- <span class="date">{{s.start}}</span> -->
+									<div class="content">
+										<div ng-switch on="s.type">
+											<div ng-switch-when="exp">
+											    <strong>{{s.title}}</strong><br>
+											    {{s.company}}
+											</div>
+											<div ng-switch-default>
+											   	<strong>{{s.degree}}</strong><br>
+											   	{{s.school}}
+											</div>
+										</div>
+										<ul>
+											<li ng-repeat="d in s.pointDescriptions">
+												{{d}}
+											</li>
+										<ul>
+									</div>
+					            </li>
+					        </ul>
+
+
+							<!-- <div class="bg-white panel">
 								<h3><i class="fa fa-suitcase"></i> Experiences</h3>
 								<div ng-repeat="e in experiences">
 									<div class="row">
@@ -158,8 +187,8 @@
 									<br>
 									<br>
 								</div>
-							</div>
-							<div class="bg-white panel">
+							</div> -->
+							<!-- <div class="bg-white panel">
 								<h3><i class="fa fa-graduation-cap "></i> Education</h3>
 								<div ng-repeat="e in education">
 									<div class="row">
@@ -183,16 +212,14 @@
 									</ul>
 									<hr>
 									Relevant courses
-									<ul>
+									<ul class="two-col">
 										<li ng-repeat="c in e.courses">
 											{{c}}
 										</li>
 									</ul>
 									<br>
-									<br>
-									<br>
 								</div>
-							</div>
+							</div> -->
 						</div>
 						<div class="col-md-5">
 							<div class="bg-white panel">
