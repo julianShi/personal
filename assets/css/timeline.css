@@ -54,12 +54,15 @@ ul.timeline li .fa.green {
 ul.timeline li .fa.purple {
   background: #7761a7;
 }
+ul.timeline li .fa.orange {
+  background: #FF9933;
+}
 ul.timeline li .content {
   position: relative;
   border-radius: 3px;
   background: rgba(255,255,255,0.8);
   margin-left: 75px;
-  padding: 12px 10px;
+  padding: 12px;
   border: 1px solid #E8E8E6;
   /*line-height: 15px;*/
   color:black;
@@ -71,13 +74,6 @@ ul.timeline li .content .img-thumbnail {
   border-radius: 0;
   margin: 10px 5px 0 0;
   cursor: pointer;
-}
-ul.timeline li .content blockquote {
-  margin: 10px 0 0 0;
-}
-ul.timeline li .content blockquote p {
-  margin: 0 0 5px 0 !important;
-  font-size: 14px;
 }
 ul.timeline li .content:before {
   background: rgba(255,255,255,0.8);
@@ -95,6 +91,12 @@ ul.timeline li .content:before {
   -webkit-transform: rotate(45deg);
   /* Safari and Chrome */
 }
+ul.timeline li .content.black, ul.timeline li .content.black:before {
+  background: rgba(0,0,0,0.5);
+  border-color: rgba(0,0,0,0.5);
+  color:#eee;
+}
+
 ul.timeline li > .date {
   background: #E8E8E8;
   position: absolute;
@@ -109,4 +111,9 @@ ul.timeline li > .date {
   text-shadow: 0 1px 0 #fafafa;
   color: #7B7B7B;
   line-height: 19px;
+}
+ul.timeline li .content hr{
+  background-color: gray;
+  height: 1px;
+  border: 0;color:gray !important;
 }

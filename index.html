@@ -52,7 +52,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<!-- Icons -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<!-- My style :3 -->
@@ -62,15 +62,10 @@
 	<body class="min-full-height">
 		<div class="fun-version min-full-height" ng-controller="viewCtrl">
 			<div class="full-bg"></div>
-			<!-- <div class="full-size-header">
-				<div id="fun-title" class="title-block">
-					<div class="title">Julian Shi</div>
-					Master of Mechanical Engineer @ McGill University
-				</div>
-			</div> -->
 			<table class="admin-style min-full-height">
 				<tr><td class="bg-black text-top">
 					<div class="side-menu">
+						<div class="menu-toggle-btn flush-right"><i class="fa fa-bars"></i></div>
 						<div>
 							<img class="s-img-left" src="assets/images/profile.jpg">
 							<div class="menu-title">Julian Shi</div>
@@ -78,7 +73,8 @@
 							McGill University
 						</div>
 						<div class="menu-btn">Profile</div>
-						<div class="menu-btn">Experience</div>
+						<div class="menu-btn">Timeline</div>
+						<div class="menu-btn">Education</div>
 						<div class="menu-btn">Education</div>
 						<div class="menu-btn">Projects</div>
 						<div class="menu-btn">Contact</div>
@@ -138,31 +134,53 @@
 							</div>
 
 							<ul class="timeline">
-					            <li ng-repeat="s in story">
-									<i class="fa {{s.icon}} {{s.type == 'exp' ? 'green' : ''}}"></i>
+								<li>
+									<i class="fa fa-star red"></i>
+									<div class="content black">
+										<div class="flush-right">May 2016</div>
+										<strong>Available for hire!</strong>
+									</div>
+								</li>
+
+					            <li ng-repeat="s in story" ng-init="$last ? refresh() : null" class="{{s.type}}">
+									<i class="fa {{s.icon}} {{storyColor[s.type]}}"></i>
 									<!-- <span class="date">{{s.start}}</span> -->
-									<div class="content">
-										<div ng-switch on="s.type">
-											<div ng-switch-when="exp">
-											    <strong>{{s.title}}</strong><br>
-											    {{s.company}}
+									<div class="content {{s.type == 'misc' ? 'black' : ''}}">
+										<div class="flush-right" ng-if="s.date">{{s.date}}</div>
+										<strong role="button" data-toggle="collapse" href="#story-{{$index}}" aria-expanded="false" aria-controls="story-{{$index}}">
+										    {{s.title}}{{s.degree}}
+										</strong><br>
+										<div class="flush-right" ng-if="s.start">{{s.start}} - {{s.end}}</div>
+										{{s.company}}{{s.school}}<br ng-if="s.company || s.school">
+										{{s.location}}
+										<div class="collapse {{s.type}}" id="story-{{$index}}">
+											<ul class="circle-point">
+												<li ng-repeat="d in s.pointDescriptions">
+													{{d}}
+												</li>
+											</ul>
+											<div ng-if="s.courses">
+												<hr>
+												<strong>Relevant Courses</strong>
+												<div class="two-col">
+													<span ng-repeat="c in s.courses">
+														{{c}}<br>
+													</span>
+												</div>
 											</div>
-											<div ng-switch-default>
-											   	<strong>{{s.degree}}</strong><br>
-											   	{{s.school}}
-											</div>
+											<blockquote ng-if="s.quote">
+												{{s.quote}}
+											</blockquote>
 										</div>
-										<ul>
-											<li ng-repeat="d in s.pointDescriptions">
-												{{d}}
-											</li>
-										<ul>
+										<hr ng-if="s.skills">
+										<span ng-repeat="l in s.skills">
+											<span class="label label-info">{{l}}</span>
+										</span>
 									</div>
 					            </li>
 					        </ul>
 
-
-							<!-- <div class="bg-white panel">
+					<!-- <div class="bg-white panel">
 								<h3><i class="fa fa-suitcase"></i> Experiences</h3>
 								<div ng-repeat="e in experiences">
 									<div class="row">

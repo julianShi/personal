@@ -19,8 +19,8 @@ var story = [
 		type: "ed",
 		degree: "Master's degree (Thesis), Mechanical Engineering",
 		school: "McGill University",
-		start: "Fall 2014",
-		end: "Summer 2016 (expected)",
+		start: "Aug 2014",
+		end: "May 2016 (expected)",
 		location: "Montreal, QC, Canada",
 		pointDescriptions: [
 			"Design finite element and modal analysis algorithms for structural dynamics and vibration computing."
@@ -50,6 +50,12 @@ var story = [
 		icon:"fa-suitcase",
 		url: ""
 	},{
+		type: "misc",
+		title: "Moving to Canada",
+		date: "Jun 2014",
+		quote: "It's so cold here, but the positiveness of the people here toward harsh weather and the beauty of sparkling white landscapes make winter one of my favorite things about Canada.",
+		icon:"fa-plane"
+	},{
 		type: "ed",
 		degree: "Bachelor of Science (BS), Aerospace, Aeronautical and Astronautical Engineering",
 		school: "Beihang University",
@@ -59,7 +65,7 @@ var story = [
 		pointDescriptions: [
 			],
 		courses:[
-			"Mathematics,",
+			"Mathematics",
 			"Fluid Mechanics",
 			"Thermodynamics",
 			"C Programming",
@@ -71,6 +77,11 @@ var story = [
 		url: ""
 	},
 ];
+
+var color = {
+	'exp': 'green',
+	'ed': 'purple'
+}
 
 var projects = [
 
@@ -86,16 +97,12 @@ var current = story[0];
 function viewCtrl($scope) {
 	$scope.currentPos = current;
 	$scope.story = story;
+	$scope.storyColor = color;
 
 	$scope.refresh = function() {
 		window.setTimeout(function(){
-			//scrollReveal
-			// window.sr = new scrollReveal();
-			// getRecentPosts();
-			// initializeSizes();
-			// addDivs();
 			// MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-			// firstFlowerDraw();
+			// $('.collapse').collapse()
 		}, 500);
 	};
 }

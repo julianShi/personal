@@ -194,6 +194,10 @@ img#transform-btn:hover{
 	padding-top:20px;
 }
 
+.admin-style .menu-toggle-btn{
+	font-size:30px;
+}
+
 .s-img-left{
 	width:120px;
 	float:left;
@@ -256,4 +260,18 @@ img#transform-btn:hover{
 
 .admin-style .contact-links a:hover{
 	color:#66aaff;
+}
+
+ul.circle-point li{
+  list-style-type: circle !important;
+  margin-bottom: 0 !important;
+}
+
+[role="button"]:hover{
+	color:#336699;
+}
+
+.flush-right{
+	display:inline-block;
+	float:right;
 }
