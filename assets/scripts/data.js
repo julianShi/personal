@@ -13,7 +13,7 @@ var story = [
 				"Implemented SLAM algorithm to map and navigate autonomously."
 			],
 		skills: ["ROS", "C++"],
-		icon:"fa-graduation-cap",
+		icon:"fa-wrench",
 		url: "",
 	},{
 		type: "ed",
@@ -103,7 +103,8 @@ function viewCtrl($scope) {
 		window.setTimeout(function(){
 			// MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 			// $('.collapse').collapse()
-		}, 500);
+			toggleMenu();
+		}, 1000);
 	};
 }
 

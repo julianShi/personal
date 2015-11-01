@@ -117,3 +117,8 @@ ul.timeline li .content hr{
   height: 1px;
   border: 0;color:gray !important;
 }
+#timeline-reset:hover{
+  color:white;
+  text-decoration: underline;
+  cursor:pointer;
+}
