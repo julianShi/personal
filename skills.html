@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skill Cloud</title>
+    <link rel="stylesheet" type="text/css" href="assets/scripts/dependencies/jqcloud.css" />
+    <link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/dependencies/jqcloud-1.0.4.min.js"></script>
+    <script type="text/javascript">
+
+
+      var skills = [
+	  {text: "Mathlab", weight: 13},
+	  {text: "Simulink", weight: 10},
+	  {text: "C++", weight: 10.5},
+	  {text: "Java", weight: 9.4},
+	  {text: "Python", weight: 8},
+	  {text: "Latex", weight: 7},
+	  {text: "Mathematics", weight: 7},
+	  {text: "ANSYS", weight: 6},
+	  {text: "GSP", weight: 6},
+	  {text: "ROS", weight: 6},
+	  {text: "OpenCV", weight: 6},
+	  {text: "Machine Learning", weight: 6},
+	  {text: "AutoCAD", weight: 6},
+	  {text: "Similation", weight: 5},
+	  {text: "Programming", weight: 5},
+	  {text: "Reading Paper", weight: 5},
+	  {text: "Cooking", weight: 5},
+	  {text: "Drawing", weight: 5},
+	  {text: "Basket Ball", weight: 5},
+	  {text: "Street Dance", weight: 5}
+	];
+
+      $(function() {
+        $("#skills").jQCloud(skills);
+      });
+    </script>
+    <style>
+    	body{
+			font-family: 'Rajdhani', sans-serif;
+			font-size: 20px;
+		}
+    </style>
+  </head>
+  <body>
+    <!-- You should explicitly specify the dimensions of the container element -->
+    <div id="skills" style="width: 450px; height: 170px;"></div>
+  </body>
+</html>

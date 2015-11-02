@@ -13,6 +13,10 @@ img#transform-btn:hover{
 	filter: alpha(opacity=50);
 }
 
+.min-full-height{
+	min-height:100%;
+}
+
 /* Acadamic paper version */
 
 .paper-container{
@@ -21,16 +25,22 @@ img#transform-btn:hover{
 	left:0;
 	width:100%;
 	z-index: 100;
+	background-color: white;
+	color:gray;
 }
 
 .title{
 	font-size:60px;
 }
 
-.title-block{
+.paper-container .title-block{
 	font-family: 'Julius Sans One', sans-serif;
 	text-align: center;
 	font-size:20px;
+	position:absolute;
+	top:calc(50% - 120px);
+	left:0;
+	width:100%;
 }
 
 .content-container{
@@ -41,6 +51,10 @@ img#transform-btn:hover{
 	font-family: 'Julius Sans One', sans-serif;
 	/*font-family: 'Orbitron', sans-serif;*/
 	font-size: 20px;
+}
+
+.header{
+	display:none;
 }
 
 .header-image{
@@ -78,7 +92,7 @@ img#transform-btn:hover{
 }
 
 
-.content{
+.two-col{
 	-webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
@@ -94,7 +108,9 @@ img#transform-btn:hover{
 /* Fun version */
 
 .version-gap{
-	background-color:#001235;
+	background-image: url("../images/3.jpg");
+	background-size: cover;
+	background-position: center;
 }
 
 .fun-version{
@@ -108,22 +124,191 @@ img#transform-btn:hover{
 	display:none;
 }
 
-.full-size-header{
+.full-bg{
+	position:fixed;
+	top:0;
+	left:0;
+	z-index: 2;
 	background-image: url("../images/3.jpg");
-	width:100%;
-	height:100%;
-	text-align: center;
 	background-size: cover;
 	background-position: center;
+	width:100%;
+	height:100%;
+
+}
+
+.full-size-header{
+	text-align: center;
 	/*-webkit-filter: blur(2px);*/
 }
 
 .fun-version .title-block{
 	position:absolute;
+	z-index: 3;
 	top:40%;
 	left:0;
 	width:100%;
+	height:auto;
 	text-align: center;
 	font-family: 'Black Ops One', cursive;
 	/*-webkit-filter: blur(0);*/
+}
+
+.admin-style{
+	position:absolute;
+	z-index: 4;
+	top:0;
+	left:0;
+	min-width:100%;
+}
+
+.row{
+	margin:0;
+}
+
+.admin-style .bg-black{
+	background-color:rgba(0,0,0,0.5);
+	color:white;
+}
+
+.admin-style .bg-white{
+	background-color:rgba(255,255,255,0.8);
+	color:black;
+}
+
+.admin-style .bg-white hr {
+	background-color: gray;
+	height: 1px;
+	border: 0;
+}
+
+.admin-style hr{
+	margin:8px 0 10px 0;
+}
+
+.admin-style .side-menu{
+	position:fixed;
+	top:0;
+	left:0;
+	padding:10px;
+	width:220px;
+	display:block;
+	float:left;
+}
+.admin-style .side-menu-container{
+	width:270px;
+}
+
+
+.admin-style .menu-btn{
+	padding:10px;
+	cursor:pointer;
+}
+
+.admin-style .menu-btn i{
+	width:20px;
+	text-align: right;
+	margin-right:10px;
+	color:gray;
+}
+
+.admin-style .menu-title{
+	font-family: 'Black Ops One', cursive;
+	font-size:50px;
+	line-height: 40px;
+	padding-top:20px;
+}
+
+.admin-style .menu-toggle-btn{
+	position:fixed;
+	top:0;
+	left:220px;
+	font-size:30px;
+	padding:5px 12px;
+	color:gray;
+}
+
+.s-img-left{
+	width:150px;
+	border-radius: 100%;
+	margin: 10px 0 10px 0;
+}
+
+.padded-side{
+	padding-left: 5% !important;
+	padding-right: 5% !important;
+}
+
+.admin-style .menu-btn:hover{
+	background-color:rgba(255,255,255,0.2);
+}
+
+.admin-style .content-body{
+	display: table-cell;
+	padding: 50px;
+}
+
+.admin-style h2{
+	font-family: 'Black Ops One', cursive;
+	font-size: 30px;
+}
+
+.admin-style h3{
+	font-family: 'Julius Sans One', sans-serif;
+	font-size:25px;
+}
+
+.admin-style h3 .fa{
+	font-size:20px;
+	padding-left: 10px;
+}
+
+.admin-style .panel{
+	padding:10px;
+	margin-bottom:20px;
+}
+
+#skill-cloud{
+	overflow:hidden;
+	width:100%;
+}
+
+.inline{
+	display:inline-block;
+}
+
+.text-top{
+	vertical-align: top;
+}
+
+.admin-style .contact-links a,
+.admin-style .contact-links a:focus,
+.admin-style .contact-links a:active{
+	color:white;
+	font-size:40px;
+	text-transform: none;
+	text-decoration: none;
+	padding-right:10px;
+}
+
+.admin-style .contact-links a:hover{
+	color:#66aaff;
+}
+
+ul.circle-point li{
+  list-style-type: circle !important;
+  margin-bottom: 0 !important;
+}
+
+[role="button"]:hover{
+	color:#336699;
+}
+
+.flush-right{
+	display:inline-block;
+	float:right;
+}
+
+table.space-end td{
+	padding-bottom: 10px;
 }

@@ -39,6 +39,7 @@
 
 <html data-ng-app lang="en">
 	<head>
+		<meta charset="utf-8">
 		<title>Julian Shi</title>
 		<!-- jQuery -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -51,15 +52,18 @@
 		<link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<!-- Icons -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<!-- My style :3 -->
 		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/timeline.css">
 	</head>
-	<body>
-		<div class="paper-container">
-			<div class="header">
-				<div class="title-block">
+	<body class="min-full-height">
+		<div class="paper-container min-full-height">
+			<div class="title-block">
+				<i class="init fa fa-refresh fa-spin fa-3x"></i>
+				<div class="header">
 					<div class="header-image">
 						<img id="transform-btn" class="transform-rotate-img" src="assets/images/profile.jpg"></div>
 					<div class="header-image-top"><img src="assets/images/profile.jpg"></div>
@@ -69,53 +73,166 @@
 					Master of Mechanical Engineer<br>McGill University
 				</div>
 			</div>
-			<div class="content-container">
-				<div class="section">
-					<div class="section-title">Abstract</div>
-					<em>I am a master student at McGill University, passionated in aerospace, robotics and cooking.</em>
-				</div>
-				<div class="content">
-					<div class="section">
-						<div class="section-title">1. Introduction</div>
-						<p> mechanical engineer or software engineer jobs.</p>
-					</div>
-
-					<div class="section">
-						<div class="section-title">2. Previous Works</div>
-						<p>Upon graduating from my master's program in mechanical engineering in McGill University in May 2016, I'm looking for mechanical engineer or software engineer jobs.</p>
-					</div>
-
-					<div class="section">
-						<div class="section-title">3. Contact Problem</div>
-						<p>Upon graduating from my master's program in mechanical engineering in McGill University in May 2016, I'm looking for mechanical engineer or software engineer jobs.</p>
-					</div>
-
-					<div class="section">
-						<div class="section-title">4. Result</div>
-						<p>Upon graduating from my master's program in mechanical engineering in McGill University in May 2016, I'm looking for mechanical engineer or software engineer jobs.</p>
-					</div>
-
-					<div class="section">
-						<div class="section-title">5. Future Work</div>
-						<p>Upon graduating from my master's program in mechanical engineering in McGill University in May 2016, I'm looking for mechanical engineer or software engineer jobs.</p>
-					</div>
-
-					<div class="section">
-						<div class="section-title">6. Reference</div>
-						<p>Upon graduating from my master's program in mechanical engineering in McGill University in May 2016, I'm looking for mechanical engineer or software engineer jobs.</p>
-					</div>
-				</div>
-			</div>
 		</div>
+		<div class="fun-version min-full-height" ng-controller="viewCtrl">
+			<div class="full-bg"></div>
+			<table id="page" class="admin-style min-full-height">
+				<tr><td class="side-menu-container bg-black text-top">
+					<div class="menu-toggle-btn flush-right" role="button"><i class="fa fa-bars"></i></div>
+					<div class="side-menu">
+						<center>
+							<img class="s-img-left" src="assets/images/profile.jpg">
+						</center>
+						<div class="menu-btn" id="profile-btn"><i class="fa fa-user"></i>Profile</div>
+						<div class="menu-btn" data-class="" data-title=""><i class="fa fa-hourglass-half "></i>Timeline</div>
+						<div class="menu-btn" data-class=".exp" data-title="EXPERIENCES"><i class="fa fa-suitcase"></i>Experiences</div>
+						<div class="menu-btn" data-class=".ed" data-title="EDUCATION"><i class="fa fa-graduation-cap"></i>Education</div>
+						<div class="menu-btn" data-class=".proj" data-title="PROJECTS"><i class="fa fa-file"></i>Projects</div>
+						<div class="menu-btn" data-class=".pub" data-title="PUBLICATION"><i class="fa fa-file"></i>Publications</div>
+						<div class="menu-btn" id="contact-btn"><i class="fa fa-envelope"></i>Contact</div>
+					</div>
+				</td>
+				<a name="profile"></a>
+				<td class="content-body">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="bg-white panel padded-side">
+								<div class="menu-title">Julian Shi</div>
+								<h3>Overview</h3>
+								<div class="row">
+									<div class="col-md-6">
+										<table class="space-end">
+											<tr><td class="text-right text-top">
+												<i class="fa fa-graduation-cap"></i>&nbsp;</td><td>
+												<strong>Education</strong><br>
+												Master of Mechanical Engineering at McGill University<br>
+											</td></tr><tr>
+											<td class="text-right text-top">
+												<i class="fa fa-map-marker"></i>&nbsp;</td><td>
+												<strong>Location</strong><br>
+												Montreal, QC, Canada<br>
+											</td></tr>
+										</table>
+									</div>
+									<div class="col-md-3">
+										<table class="space-end">
+											<tr><td class="text-right text-top">
+												<i class="fa fa-globe"></i>&nbsp;</td><td>
+												<strong>Language</strong><br>
+												English, Mandarin<br>
+											</td></tr><tr>
+											<td class="text-right text-top">
+												<i class="fa fa-calendar-check-o"></i>&nbsp;</td><td>
+												<strong>Availability</strong><br>
+												Starting from May 2016<br>
+											</td></tr>
+										</table>
+									</div>
+								</div>
+								<!-- <h3><strong>{{currentPos.title}}</strong></h3>
+								<div class="row">
+									<div class="col-md-8">
+										@ {{currentPos.company}} - {{currentPos.location}}
+									</div>
+									<div class="col-md-4 text-right">
+										Since {{currentPos.start}}
+									</div>
+								</div>
+								<hr>
+								Learning: <span ng-repeat="l in currentPos.skills">
+									<span class="label label-info">{{l}}</span>
+								</span> -->
+								<h3>HIGHTLIGHTS</h3>
+								<ul class="circle-point">
+									<li>Strong background in mathematics, physics and mechanics</li>
+									<li>Experience in manufacturing industry</li>
+									<li>Familiar with computer simulation and machine learning, and their state-of-the-art algorithms</li>
+								</ul>
+							</div>
+						</div>
 
-		<div class="fun-version">
-			<div class="full-size-header">
-				<div id="fun-title" class="title-block">
-					<div class="title">Julian Shi</div>
-					Master of Mechanical Engineer @ McGill University
-				</div>
-			</div>
+					</div>
+					<a name="timeline"></a>
+					<div class="row">
+						<div class="col-md-7">
+							<h3><span id="timeline-reset">TIMELINE</span>
+								<span id="timeline-navigator"></span></h3>
+							<ul class="timeline">
+								<li class="timelineData">
+									<i class="fa fa-star red"></i>
+									<div class="content black">
+										<div class="flush-right">May 2016</div>
+										<strong>Available for hire!</strong>
+									</div>
+								</li>
+
+					            <li ng-repeat="s in story" ng-init="$last ? refresh() : null" class="timelineData {{s.type}}">
+									<i class="fa {{s.icon}} {{storyColor[s.type]}}"></i>
+									<!-- <span class="date">{{s.start}}</span> -->
+									<div class="content {{s.type == 'misc' ? 'black' : ''}}">
+										<div class="flush-right" ng-if="s.date">{{s.date}}</div>
+										<strong role="button" data-toggle="collapse" href="#story-{{$index}}" aria-expanded="false" aria-controls="story-{{$index}}">
+										    {{s.title}}{{s.degree}}
+										</strong><br>
+										<div class="flush-right" ng-if="s.start">{{s.start}} - {{s.end}}</div>
+										{{s.company}}{{s.school}}<br ng-if="s.company || s.school">
+										{{s.location}}
+										<div class="collapse {{s.type}}" id="story-{{$index}}">
+											<ul class="circle-point">
+												<li ng-repeat="d in s.pointDescriptions">
+													{{d}}
+												</li>
+											</ul>
+											<div ng-if="s.courses">
+												<hr>
+												<strong>Relevant Courses</strong>
+												<div class="two-col">
+													<span ng-repeat="c in s.courses">
+														{{c}}<br>
+													</span>
+												</div>
+											</div>
+											<blockquote ng-if="s.quote">
+												{{s.quote}}
+											</blockquote>
+										</div>
+										<hr ng-if="s.skills">
+										<span ng-repeat="l in s.skills">
+											<span class="label label-info">{{l}}</span>
+										</span>
+									</div>
+					            </li>
+					        </ul>
+						</div>
+						<div class="col-md-5">
+							<div class="bg-black panel">
+								<h3><i class="fa fa-cogs"></i> Skills</h3>
+								<iframe id="skill-cloud" src="./skills.html" scrolling="no" frameborder="0"
+								height="200px"></iframe>
+							</div>
+							<!-- <div class="bg-white panel">
+								<h3><i class="fa fa-file-text"></i> Interests</h3>
+							</div> -->
+							<div class="bg-white panel">
+								<h3><i class="fa fa-file-text"></i> Summary</h3>
+								<p>Upon graduating from my master's program in mechanical engineering in McGill University in May 2016, I'm looking for mechanical engineer or software engineer jobs.</p>
+								<p>I had two years of research and project experiences in aircraft engine systems modelling and controllers design in Beijing. I'm now in research of nonlinear system e.g. contact problems. </p>
+								<p>My dream is to bring machine with intelligence, and bring human with high-tech, so I also took ML and AI courses. I'm also in McGill Robotics Club to chase my dream now.</p>
+								<p>I grew up in south China, where there are many beautiful trees and creatures. It's less developed yet people there are very friendly and hardworking. I wish to contribute to my hometown.</p>
+							</div>
+							<a name="contact"></a>
+							<div class="contact-links">
+								<a href="" target="_blank"><i class="fa fa-facebook-official"></i></a>
+								<a href="https://ca.linkedin.com/pub/yulin-shi/5a/a49/53b" target="_blank"><i class="fa fa-linkedin"></i></a>
+								<a href="https://github.com/julianShi" target="_blank"><i class="fa fa-github"></i></a>
+								<a href="mailto:yulin.shi@mail.mcgill.com" title="yulin.shi@mail.mcgill.com"><i class="fa fa-envelope"></i></a>
+							</div>
+						</div>
+					</div>
+				</td></tr>
+			</table>
 		</div>
 	</body>
 	<script type="text/javascript" src="assets/scripts/script.js"></script>
+	<script type="text/javascript" src="assets/scripts/data.js"></script>
 </html>
