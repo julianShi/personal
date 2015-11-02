@@ -139,10 +139,9 @@ function viewCtrl($scope) {
 		window.setTimeout(function(){
 			// MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 			// $('.collapse').collapse()
-			toggleMenu();
+			$('.paper-container .init').fadeOut('fast', function(){
+				$('.paper-container .header').fadeIn('fast');
+			});
 		}, 1000);
 	};
 }
-
-$(function(){
-}());

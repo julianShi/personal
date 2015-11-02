@@ -25,16 +25,22 @@ img#transform-btn:hover{
 	left:0;
 	width:100%;
 	z-index: 100;
+	background-color: white;
+	color:gray;
 }
 
 .title{
 	font-size:60px;
 }
 
-.title-block{
+.paper-container .title-block{
 	font-family: 'Julius Sans One', sans-serif;
 	text-align: center;
 	font-size:20px;
+	position:absolute;
+	top:calc(50% - 120px);
+	left:0;
+	width:100%;
 }
 
 .content-container{
@@ -45,6 +51,10 @@ img#transform-btn:hover{
 	font-family: 'Julius Sans One', sans-serif;
 	/*font-family: 'Orbitron', sans-serif;*/
 	font-size: 20px;
+}
+
+.header{
+	display:none;
 }
 
 .header-image{
@@ -98,7 +108,9 @@ img#transform-btn:hover{
 /* Fun version */
 
 .version-gap{
-	background-color:#001235;
+	background-image: url("../images/3.jpg");
+	background-size: cover;
+	background-position: center;
 }
 
 .fun-version{
