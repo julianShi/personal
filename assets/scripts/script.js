@@ -73,6 +73,19 @@ function scrollToAnchor(aid){
     $('html,body').animate({scrollTop: aTag.offset().top},'slow');
 }
 
+function jumpInRecurse(list, i){
+		console.log(list[i]);
+	if (list[i]){
+		$(list[i]).animate({
+			'font-size': '40px'
+		}, 300);
+		window.setTimeout(function(){
+			jumpInRecurse(list, i+1);
+		}, 150);
+	}
+}
+
+
 (function(){
 	// $('#transform-btn').click(function(){
 	// 	transform();
@@ -100,8 +113,21 @@ function scrollToAnchor(aid){
 				}else{
 					$('#timeline-navigator').html('');
 				}
+				scrollToAnchor('timeline');
 			}
-			scrollToAnchor('timeline');
 		});
+	});
+
+	$('#profile-btn').click(function(){
+		scrollToAnchor('profile');
+	});
+	$('#contact-btn').click(function(){
+		scrollToAnchor('contact');
+		$('.contact-links').children().each(function(){
+			$(this).css('font-size', 0);
+		});
+		window.setTimeout(function(){
+			jumpInRecurse($('.contact-links').children(), 0);
+		}, 500);
 	});
 }());
