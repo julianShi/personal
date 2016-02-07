@@ -1,18 +1,39 @@
 var story = [
 	{
+		type: "ed",
+		degree: "Master of Mechanical Engineering (Thesis)",
+		school: "McGill University",
+		start: "Aug 2014",
+		end: "May 2016 (expected)",
+		location: "Montreal, QC, Canada",
+		pointDescriptions: [
+			" Developed semismooth Newton iterative algorithms to solve contact stress. ",
+			" Developed a software project using FreeFem++ (in C++) libraries to compute contact stress. ",
+			" Developed a frequency solver for rotor-stator contact (to be published in a conference). "
+			],
+		skills: ["Technical Writing", "C++", "Matlab/Simulink", "Latex", "Fortran"],
+		courses:[
+			"Control Systems",
+			"Finite Element",
+			"Advanced Dynamics",
+			"Machine Learning",
+			"Artificial Intelligence",
+			],
+		icon:"fa-graduation-cap",
+		url: ""
+	},{
 		type: "exp",
-		title: "Software Engineer",
+		title: "Simulation Engineer",
 		company: "McGill Robotics",
 		start: "Sept 2015",
 		end: "Pre",
 		location: "Montreal, QC, Canada",
 		pointDescriptions:[
-				"Set up a small unmanned aerial vehicle (UAV) and APM using ardupilot firmware.",
-				"Set up simulation environments on robot operating system (ROS) for testing flying controller.",
-				"Built a autonomous rover with an Arduino board and a sonar sensor.",
-				"Implemented SLAM algorithm to map and navigate autonomously."
+			"Write simulation control plug-ins with Gazebo API in C++. ",
+			"Develop high-fidelity simulation environment for testing Mars Rover and drone.",
+			"Built an autonomous vehicle with an Arduino board and a sonar sensor. "
 			],
-		skills: ["ROS", "C++"],
+		skills: ["C++", "Python", "ROS", "Gazebo", "Arduino"],
 		icon:"fa-wrench",
 		url: "",
 	},{
@@ -27,26 +48,6 @@ var story = [
 		icon:"fa-book",
 		url:""
 	},{
-		type: "ed",
-		degree: "Master's degree (Thesis), Mechanical Engineering",
-		school: "McGill University",
-		start: "Aug 2014",
-		end: "May 2016 (expected)",
-		location: "Montreal, QC, Canada",
-		pointDescriptions: [
-			"Design finite element and modal analysis algorithms for structural dynamics and vibration computing."
-			],
-		courses:[
-			"Applied Mathematics",
-			"Control Systems",
-			"Finite Element",
-			"Advanced Dynamics",
-			"Machine Learning",
-			"Artificial Intelligence",
-			],
-		icon:"fa-graduation-cap",
-		url: ""
-	},{
 		type: "misc",
 		title: "Moving to Canada",
 		date: "Jun 2014",
@@ -54,7 +55,7 @@ var story = [
 		icon:"fa-plane"
 	},{
 		type: "exp",
-		title: "Mechanical Engineer",
+		title: "Engineering intern",
 		company: "Chinese Academy of Sciences",
 		start: "Mar 2013",
 		end: "Aug 2013 ",
@@ -68,31 +69,7 @@ var story = [
 		url: ""
 	},{
 		type: "ed",
-		degree: "Exchange student, Information Technology",
-		school: "University of Tsukuba",
-		date: "2012",
-		location: "Tsukuba, Japan",
-		pointDescriptions: [
-			"Design a software/hardware mechanism for real-time atmosphere data sensing, wireless communication and display using the eKo kit."
-			],
-		icon:"fa-exchange",
-		url: ""
-	},{
-		type:"proj",
-		title:"Recuperative distiller product",
-		company:"Beihang University",
-		location: "Beijing, China",
-		start: "Sep 2010",
-		end: "May 2011",
-		pointDescriptions: [
-			"Led a 4 people team, designed recuperative processes which recycle steam.",
-			"Designed parts of prototypes with AutoCAD. Manufactured chambers by welding. Manufactured medal heat exchanger using drilling lathes."
-			],
-		icon:"fa-recycle",
-		url: ""
-	},{
-		type: "ed",
-		degree: "Bachelor of Science (BS), Aerospace, Aeronautical and Astronautical Engineering",
+		degree: "Bachelor of Engineering, Flying Vehicle Power Engineering",
 		school: "Beihang University",
 		start: "2009",
 		end: "2013",
@@ -100,13 +77,14 @@ var story = [
 		pointDescriptions: [
 			],
 		courses:[
-			"Mathematics",
-			"Fluid Mechanics",
+			"Fluid Dynamics",
 			"Thermodynamics",
 			"C Programming",
 			"Electrics and Electronics",
 			"Manufacturing Practise",
 			"Automatic Control",
+			"Heat Transfer"
+			"Aircraft Engine"
 			],
 		icon:"fa-graduation-cap",
 		url: ""
