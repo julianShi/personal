@@ -17,7 +17,7 @@ var story = [
 			"Finite Element",
 			"Advanced Dynamics",
 			"Machine Learning",
-			"Artificial Intelligence",
+			"Artificial Intelligence"
 			],
 		icon:"fa-graduation-cap",
 		url: ""
@@ -83,7 +83,7 @@ var story = [
 			"Electrics and Electronics",
 			"Manufacturing Practise",
 			"Automatic Control",
-			"Heat Transfer"
+			"Heat Transfer",
 			"Aircraft Engine"
 			],
 		icon:"fa-graduation-cap",
